@@ -1,0 +1,34 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Everything in any directory
+*.tar.gz
+*.jar
+*.parquet
+*.avro
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+*.log
+
+# Password/Credentials -> this is a LAB, nothing critical here so including passwords to make it simpler for someone
+# to build quick and run, without needing to know which passwords is mapped to which other app/variable.
+#devlab/.env
+#.pwd
+
+.DS_Store
+.idea/
+.vscode/
+
+mqtt-job/target
+mqtt-source/dependency-reduced-pom.xml
+mqtt-source/target
+
+old/*
