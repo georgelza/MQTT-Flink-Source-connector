@@ -9,7 +9,7 @@ This was mostly done to demostrate a IoT pipeline based on a source of json payl
 As part of this the [Eclipse library](https://github.com/eclipse-paho/paho.mqtt.java/tree/master) used is based around org.eclipse.paho.client.mqttv3. 
 
 
-GIT REPO: []()
+GIT REPO: [MQTT-Flink-Source-connector](https://github.com/georgelza/MQTT-Flink-Source-connector.git)
 
 
 In `<root>` execute `make build`
