@@ -7,11 +7,13 @@
 /
 /       Description     :   MQTT Source connector
 /
-/       Created     	:   April 2025
+/       Created     	:   June 2025
 /
 /       copyright       :   "Copyright 2024, - G Leonard"
 /
-/       GIT Repo        :
+/       GIT Repo        :   https://github.com/georgelza/MQTT-Flink-Source-connector.git
+/
+/       Blog            :   https://medium.com/p/54e3f54fd2d5
 /
 *///////////////////////////////////////////////////////////////////////////////////////////////////////
 package com.mqtt.source;
