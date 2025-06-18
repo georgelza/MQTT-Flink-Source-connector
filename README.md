@@ -2,9 +2,9 @@
 
 Ok, as per my normal Blog postings... Rabbit Holes... 
 
-This all started as a simply MVP for a [Apache Flink](https://flink.apache.org) [Mqtt](https://mqtt.org) Source Connector. 
+This all started as a simply MVP for a [Apache Flink](https://flink.apache.org) [MQTT](https://mqtt.org) Source Connector. 
 
-This was mostly done to demostrate a IoT pipeline based on a source of json payload being written [Mqtt](https://mqtt.org) broker, consumed via this source connector, consumed by flink and pushed into Fluss and into [Prometheus](https://prometheus.io) with a [Grafana Dashboard](https://grafana.com).
+This was mostly done to demostrate a IoT pipeline based on a source of json payload being written [MQTT](https://mqtt.org) Broker, consumed via this source connector, consumed by flink and pushed into Fluss and into [Prometheus](https://prometheus.io) with a [Grafana Dashboard](https://grafana.com).
 
 As part of this the [Eclipse library](https://github.com/eclipse-paho/paho.mqtt.java/tree/master) used is based around org.eclipse.paho.client.mqttv3. 
 
@@ -213,15 +213,15 @@ Inside this method, `MqttTableSourceFactory` creates and returns an instance of 
    
    4. `MqttSourceFunction.java`: This is the core component that performs the actual data ingestion:
    
-   5. Its open() method is called when the Flink Task Manager starts the task. This is where the MQTT client (`org.eclipse.paho.client.mqttv3.MqttClient`) connects to the broker, sets up connection options (including `automaticReconnect` and `cleanSession` values you configured), and subscribes to the MQTT topic.
+   5. Its open() method is called when the Flink Task Manager starts the task. This is where the MQTT Client (`org.eclipse.paho.client.mqttv3.MqttClient`) connects to the broker, sets up connection options (including `automaticReconnect` and `cleanSession` values you configured), and subscribes to the MQTT topic.
    
    6. The `run()` method continuously listens for messages from the MQTT topic, puts raw byte messages into an internal queue, and then uses the `DeserializationSchema` to parse them into Flink's `RowData` format. It then `collect()`s these `RowData` records, making them available to the downstream Flink pipeline.
    
-   7. The cancel() and close() methods handle the graceful shutdown of the MQTT client when the Flink job stops or is cancelled.
+   7. The cancel() and close() methods handle the graceful shutdown of the MQTT Client when the Flink job stops or is cancelled.
 
-11.  In summary, the `MqttTableSourceFactory` and `MqttTableSource` define how your MQTT connector integrates with Flink's Table API, while `MqttSourceFunction` contains the runtime logic for actually consuming data from MQTT, all orchestrated by the `MqttJob` and Flink's internal SQL engine.
+11.  In summary, the `MqttTableSourceFactory` and `MqttTableSource` define how your MQTT Connector integrates with Flink's Table API, while `MqttSourceFunction` contains the runtime logic for actually consuming data from MQTT, all orchestrated by the `MqttJob` and Flink's internal SQL engine.
 
-12.  Once the above was made to work I expanded the base classes to included as many of the eclipse MQTT client variables.
+12.  Once the above was made to work I expanded the base classes to included as many of the eclipse MQTT Client variables.
     
     
 ### Code Flow - Record Publish on MQTT Topic
