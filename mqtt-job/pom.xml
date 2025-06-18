@@ -53,10 +53,20 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.mqtt</groupId>
-            <artifactId>mqtt-source</artifactId>
-            <version>${project.version}</version> 
+       <dependency>
+          <groupId>com.mqtt</groupId>
+          <artifactId>mqtt-source</artifactId>
+          <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.paho</groupId>
+                    <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

@@ -9,7 +9,7 @@
 /
 /       Created     	:   June 2025
 /
-/       copyright       :   "Copyright 2024, - G Leonard"
+/       copyright       :   Copyright 2025, - G Leonard, georgelza@gmail.com
 /
 /       GIT Repo        :   https://github.com/georgelza/MQTT-Flink-Source-connector.git
 /
